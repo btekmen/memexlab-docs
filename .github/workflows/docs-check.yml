@@ -1,0 +1,35 @@
+name: Docs checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    name: Internal Markdown links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check internal links (offline)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # --offline only validates local/relative link targets, so CI is
+          # deterministic and never flakes on external rate limits.
+          args: --offline --no-progress "**/*.md"
+          fail: true
+
+  lint:
+    name: Markdown lint (advisory)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: markdownlint
+        continue-on-error: true
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: "**/*.md"
