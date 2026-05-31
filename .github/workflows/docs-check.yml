@@ -14,7 +14,7 @@ jobs:
     name: Internal Markdown links
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Check internal links (offline)
         uses: lycheeverse/lychee-action@v2
         with:
@@ -27,9 +27,9 @@ jobs:
     name: Markdown lint (advisory)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: markdownlint
         continue-on-error: true
-        uses: DavidAnson/markdownlint-cli2-action@v19
+        uses: DavidAnson/markdownlint-cli2-action@v23
         with:
           globs: "**/*.md"
