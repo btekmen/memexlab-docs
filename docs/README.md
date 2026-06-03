@@ -34,6 +34,8 @@ Three reading paths, depending on who you are today.
 | `13-future-expansion.md`     | Multi-user, API, agents, productisation                     |
 | `14-faq.md`                  | Practical questions                                         |
 | `quickstart.md`              | Ten-minute setup                                            |
+| `self-hosting.md`            | Run the vault as a self-hosted agent: the reference runner, switchable local/hosted backend |
+| `library.md`                 | The growing library of knowledge assets (papers, reports, books) |
 | `one-pager.md`               | The whole system on a single page                           |
 | `maintenance-checklist.md`   | Literal checklist, by cadence                               |
 | `glossary.md`                | Alphabetical definitions                                    |
@@ -109,7 +111,7 @@ memex chart <kind>
 
 **Callouts.** Blocks labelled _Do this_ / _Do not do this_ / _Example_ / _Why it matters_ appear where the default behaviour is easy to get wrong. They are meant to be skimmed.
 
-**Command samples.** Commands describe the intended `memex` CLI interface against a vault set up via `09-onboarding.md`. The engine that runs them is a separate, not-yet-public repository, so treat the samples as **conceptual until its release** rather than clone-and-run from this docs repo.
+**Command samples.** Commands describe the intended `memex` CLI interface against a vault set up via `09-onboarding.md`. That CLI package is maintained separately and not yet packaged for install, so treat the `memex …` samples as **conceptual until its release**. The agent framework itself — skills, schemas, governance, and a runnable reference runner — is public in [`memexlab-engine`](https://github.com/btekmen/memexlab-engine); see `self-hosting.md` to run it today.
 
 **Sample notes.** Sample frontmatter is valid against the current schemas in `memex/memex/schemas.py`. Sample bodies are deliberately short; production notes will be longer.
 
